@@ -1,0 +1,4 @@
+﻿SELECT *, @lasttype!= `type` aaa, @lasttype := IF (@lasttype <> `type`, `type`, @lasttype)
+FROM yeltest2, (SELECT @lasttype := '')  t1
+HAVING aaa =1
+ORDER BY `type`, `date` DESC
